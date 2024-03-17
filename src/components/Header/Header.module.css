@@ -1,0 +1,36 @@
+body{
+    overflow-x:hidden;
+    display: flex;
+
+}
+.Header{
+    width: 100vw;
+    height: 10vh;
+    background: #079494;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+a{
+    font-size: 25px;
+    color: #020246;
+    text-decoration: none;
+    font-weight: bolder;
+    font-family: "Inria Serif", serif;
+}
+.logo{
+
+    margin-bottom: 10px;
+}
+.account{
+    width: 50px;
+    height: 50px;
+}
+.textWihtLogo{
+    height: 70px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
