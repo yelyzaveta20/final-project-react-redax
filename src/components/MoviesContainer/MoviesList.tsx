@@ -4,6 +4,7 @@ import {movieActions} from "../../redux";
 import {useSearchParams} from "react-router-dom";
 import {Movie} from "./Movie";
 import css from './Movies.module.css'
+import {Paginations} from "../PaginationsContainer";
 const MoviesList = () => {
     const {movies}=useAppSelector(state => state.movies)
     let dispatch = useAppDispatch();
@@ -13,8 +14,14 @@ const MoviesList = () => {
         dispatch(movieActions.getAllMovies(page))
     }, [page]);
     return (
-        <div className={css.Movie}>
-            {movies.map(movie=><Movie key={movie.id} movie={movie}/>)}
+        <div >
+            <div className={css.Movie}>
+
+                {movies.map(movie=><Movie key={movie.id} movie={movie}/>)}
+            </div>
+            {movies && <div >
+                <Paginations/>
+            </div>}
         </div>
     );
 };

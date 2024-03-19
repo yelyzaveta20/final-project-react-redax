@@ -1,0 +1,37 @@
+img{
+
+    width: 16vw;
+    height: 48vh;
+
+}
+.Movie{
+    /*margin-left: 30px;*/
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+.gropMovie{
+    width: 16vw;
+    height: 58vh;
+    margin:2vh 1vw 0 1vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    border-bottom: black 1px solid;
+
+}
+
+h2{
+    color: darkblue;
+    font-family: DialogInput;
+    margin-top: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.rating{
+
+    margin: -30px 0 -10px 0;
+}
