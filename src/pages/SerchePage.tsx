@@ -1,7 +1,9 @@
+import {Serches} from "../components/SerchesContainer";
+
 const SerchePage = () => {
     return (
         <div>
-            SerchePage
+            <Serches/>
         </div>
     );
 };

@@ -1,1 +1,2 @@
-export * from './Genres'
+export * from './GenresList'
+export * from './Genre'

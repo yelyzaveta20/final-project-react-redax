@@ -5,6 +5,7 @@ import {IRes} from "../types";
 
 const movieServise={
     getAll:(page:string | null):IRes<IMovies>=>apiService.get(urls.movie.base, {params:{page}}),
+    withGenserId:(idGenre:number, page:string|null):IRes<IMovies>=>apiService.get(urls.movie.withGenser(idGenre), {params:{page}}),
     detailsMovie:(id:number):IRes<IMovieDetails>=>apiService.get(urls.movie.moviedetais(id))
 }
 export {movieServise}
