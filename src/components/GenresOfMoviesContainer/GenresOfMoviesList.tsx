@@ -24,7 +24,7 @@ const GenresOfMoviesList = () => {
 
     return (
         <div>
-            {movies.map(movieGenre=><GenreOfMovie key={movieGenre.id} movieGenre={movieGenre}/>)}
+            {movies&&movies.map(movieGenre=><GenreOfMovie key={movieGenre.id} movieGenre={movieGenre}/>)}
             {movies && <div >
                 <Paginations/>
             </div>}

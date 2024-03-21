@@ -14,7 +14,7 @@ const GenreOfMovie : FC<IProps> = ({movieGenre}) => {
     const posterurl=`${poster}${poster_path}`
 
     const handle = () => {
-        navigate(`/details/${id}`)
+        navigate(`/moviedetails/${id}`)
     }
  return (
      <div>
