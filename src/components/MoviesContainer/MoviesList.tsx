@@ -16,8 +16,10 @@ const MoviesList = () => {
     return (
         <div >
             <div className={css.Movie}>
+                {
+                    movies&&movies.map(movie=><Movie key={movie.id} movie={movie}/>)
+                }
 
-                {movies.map(movie=><Movie key={movie.id} movie={movie}/>)}
             </div>
             {movies && <div >
                 <Paginations/>

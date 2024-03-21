@@ -1,20 +1,26 @@
-import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
+import {createAsyncThunk, createSlice, isFulfilled} from "@reduxjs/toolkit";
 import {IMovie, ISerche, ISerches} from "../../interface";
 import {AxiosError} from "axios";
 import {sercheService} from "../../services";
 
 interface ISercheState {
-    query: IMovie[];
+    query: IMovie[]; // Update the type here
     page: string | null;
     isFormActive: boolean;
 }
 
 const initialState: ISercheState = {
-    query: [],
+    query: [], // Initialize as an empty array
     page: null,
     isFormActive: false,
 };
-export const getSerche = createAsyncThunk(
+
+// Define the payload type for getSerche
+interface GetSerchePayload {
+    results: IMovie[]; // Assuming this is the correct payload structure
+}
+
+const getSerche = createAsyncThunk(
     'sercheSlice/getSerche',
     async ({ query, page }: { query: string; page: string | null }) => {
         try {
@@ -31,20 +37,23 @@ const sercheSlice = createSlice({
     name: 'sercheSlice',
     initialState,
     reducers: {
+        // You might want to rename this action to setQueryResults for clarity
         setQuery(state, action) {
             state.query = action.payload;
         },
         setPage(state, action) {
             state.page = action.payload;
         },
-        setFormActive(state, action) {
-            state.isFormActive = action.payload;
-        },
+
     },
     extraReducers: (builder) =>
-        builder.addCase(getSerche.fulfilled, (state, action) => {
+        builder
+            .addCase(getSerche.fulfilled, (state, action) => {
             state.query = action.payload.results;
-        }),
+        })
+            .addMatcher(isFulfilled(getSerche), state => {
+                state.isFormActive = true
+            })
 });
 // const getSerche=createAsyncThunk<ISerches, any>(
 //     'sercheSlice/getSerche',

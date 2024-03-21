@@ -6,15 +6,20 @@ import {AxiosError} from "axios";
 
 
 interface IState {
-    movies:IMovie[],
+    movies:IMovie[]|null,
     page:string | null,
     movieDetails:IMovieDetails,
     id:number,
     moviesGenres:IMovie[],
     movieResults:IMovie[]
 }
+interface MovieOfGenresPayload {
+    id: number;
+    page: string | null;
+}
+
 const initialState:IState={
-    movies:[],
+    movies:null,
     page:null,
     movieDetails:null,
     id:null,
@@ -48,12 +53,13 @@ const getDetails=createAsyncThunk<IMovieDetails, number>(
     }
 )
 
-const getMovieOfGenres = createAsyncThunk<IMovies,any >(
+const getMovieOfGenres = createAsyncThunk<IMovies,MovieOfGenresPayload >(
     'movieSlice/getMovieOfGenres',
     async ({id, page}, thunkAPI) => {
         try {
             const { data } = await movieServise.withGenserId(id, page);
             return data;
+
         } catch (e) {
             const err = e as AxiosError;
             return thunkAPI.rejectWithValue(err.response.data);
@@ -71,7 +77,7 @@ const movieSlice= createSlice({
             // .addCase(getAllMovies.fulfilled, (state, action)=>{
             //     // state.movies=action.payload.results
             //     const {page, results} = action.payload;
-            //
+            //     state.page=page
             //     state.movies = results
             // })
             .addCase(getDetails.fulfilled, (state, action) => {
@@ -79,6 +85,7 @@ const movieSlice= createSlice({
             })
             // .addCase(getMovieOfGenres.fulfilled, (state, action) => { // <-- only one argument provided
             //     state.moviesGenres = action.payload.results;
+            //
             // })
             .addMatcher(isFulfilled(getAllMovies, getMovieOfGenres), (state, action) => {
                 const {page, results} = action.payload;
