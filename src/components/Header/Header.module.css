@@ -11,6 +11,12 @@ body{
     justify-content: space-around;
     align-items: center;
 }
+
+.Header a[class='active'] {
+    color: #10109b;
+
+
+}
 a{
     font-size: 25px;
     color: #020246;

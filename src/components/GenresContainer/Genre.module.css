@@ -1,0 +1,20 @@
+.Genre{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+}
+.div{
+    margin-right: 5px;
+    margin-top: 5px;
+}
+.div a{
+    border: 1px black solid;
+    padding:1.5px 3px 1.5px 3px;
+    border-radius: 10px;background: rgba(175, 197, 122, 0.25);
+    color: #020246;
+}
+.div a[class='active'] {
+    color: #4d4de7;
+}

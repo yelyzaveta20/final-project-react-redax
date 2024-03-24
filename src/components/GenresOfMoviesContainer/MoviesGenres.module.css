@@ -1,0 +1,51 @@
+.GenreMovie{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+/*.title*/
+/*!*.title{*!*/
+/*!*    color: darkblue;*!*/
+/*!*    font-family: DialogInput;*!*/
+/*!*    margin-top: 4px;*!*/
+/*!*    white-space: nowrap;*!*/
+/*!*    overflow: hidden;*!*/
+/*!*    text-overflow: ellipsis;*!*/
+/*!*}*!*/
+/*!*h2{*!*/
+/*!*    color: darkblue;*!*/
+/*!*    font-family: DialogInput;*!*/
+/*!*    margin-top: 4px;*!*/
+/*!*    white-space: nowrap;*!*/
+/*!*    overflow: hidden;*!*/
+/*!*    text-overflow: ellipsis;*!*/
+/*!*}*!*/
+/*h3{*/
+/*    height: 3.5vh;*/
+
+/*}*/
+/*.wrapper{*/
+/*    width: 16vw;*/
+/*    height: 58.5vh;*/
+/*    margin:2vh 1vw 0 1vw;*/
+/*    display: flex;*/
+/*    flex-wrap: wrap;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*    border-bottom: black 1px solid;*/
+
+/*}*/
+/*.rating{*/
+/*    margin-left: -10px;*/
+/*    margin-top: -30px;*/
+/*}*/
+
+/*.genreOfMoviesLight h3{*/
+/*    color: #aad6f1;*/
+/*}*/
+/*.genreOfMoviesLight button{*/
+/*    background: rgb(238,174,202);*/
+/*    background: radial-gradient(circle, rgba(238,174,202,0.5041666324733018) 0%, rgba(148,187,233,0.5013655120251226) 100%);*/
+/*    color: #e1fc0b;*/
+/*}*/

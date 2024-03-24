@@ -2,9 +2,10 @@ import {useAppDispatch, useAppSelector} from "../../hooks";
 import {useLocation, useSearchParams} from "react-router-dom";
 import {useEffect} from "react";
 import {movieActions} from "../../redux";
-import {GenreOfMovie} from "./GenreOfMovie";
-import {Paginations} from "../PaginationsContainer";
 
+import {Paginations} from "../PaginationsContainer";
+import css from './MoviesGenres.module.css'
+import {Movie} from "../MoviesContainer";
 const GenresOfMoviesList = () => {
     const { movies } = useAppSelector(state => state.movies);
     const dispatch = useAppDispatch();
@@ -24,7 +25,10 @@ const GenresOfMoviesList = () => {
 
     return (
         <div>
-            {movies&&movies.map(movieGenre=><GenreOfMovie key={movieGenre.id} movieGenre={movieGenre}/>)}
+            <div className={css.GenreMovie}>
+
+                {movies&&movies.map(movie=><Movie key={movie.id} movie={movie}/>)}
+            </div>
             {movies && <div >
                 <Paginations/>
             </div>}

@@ -1,23 +1,26 @@
 import {NavLink} from "react-router-dom";
 
 import css from './Header.module.css'
+import {ThemeSwicher} from "../Swicher";
 
 const Header = () => {
     return (
         <div className={css.Header}>
-            <div >
+            <div>
                 <NavLink className={css.textWihtLogo} to={'/movies'}>KING MOVIES
 
-                <img
-                className={`${css.logo} ${css.account}`}
-                alt={'Logo'}
-                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAACXBIWXMAAAsTAAALEwEAmpwYAAAHMUlEQVR4nO1a60+TVxjvLrpLtuzDPuzDlixLln1asmQuS/YHLNn2eWYfN5eFJZwDeAMkM5apKMg5QJVCC+05LW2ptMDEaybgBbeAUybqmBdQ57xw8QYIGqJwluc971t42wJtaSfK+yRPQs57Ls/vd57bW16TyRBDDDHEEEMMMeR/FLM5sJRitp0gdk9RzErtafYlpsUiFLPtFHNhzfZOWLM9E/A3xZyaFosQxO9Yc7yPxwZ6xOhAj7DmeB5TzAZMi0UIZrfh5gH8aH+IgD7TYhGC2DZw+4oc74Q1xzMJfxPMt5gWixRlO16nmD1UYx/Aj5Wnl79mWixCMc8G4DWba4Q736mQUIydq56oUfY0+xKCGCGI9xPEB8FNoVwl+5zCNPsbkAQBdE9bQJzfXyW9APFB8Ixkn2fJsLyk4hqU2ACX+cUZ49I6rTTBWLINophthr13bvOI8WuN4sHZSuEvkF5AEd+Q7PMAfAQuzAujTOT94aWJIHYzmcaUZVa/RREbBSOudgRDBFxutksCMBvZgdxvJvNMqC5RSm5kxaGYDYSXJihXqWiAGi1eBbxGAGh9seoFmBcn90x+KwJXtIuliBVJV/FMVOSqpQmx9mS1qMW45j2K2HhJBhd9p+ojCLh2xCbgmVIdfnS9nYwzzWbz8xSzFqXk5nom5e3PUHIDywMvUMS2UsRHtPKkTj5BkPuD+RpDEHPDfvtsU7c/nQDQ3WXSCwhmlfM9rzCj6h2KeOt0LIANwAPW2Qy1wOQA8YiKHLe6kI0SxH5I1JjiTMeHBLPHZZlc3O6un5GAm7/ZRGmm4gWPaHr1+wmfl+H8miJ2F2yvzGEiUKQSi5hlzsUkg30Pk/dYfWLoQoNoLPNM8wbWmEiSopg1wfpm7tOBDycA9IC1WiPdG+859jT7q9oFKrmGOMTdPypFU6lWZZwr5tykBDk+gcncXBMy8vSBOmFZqbkS66Pp/IvYwbs+JZhNWla5xNCF+jkJuNVhk2chPkGx86N4zqGIXwQbLVlMdNRWhfZk65m8wEzXsrk3WhV4hSL+qDTDJcauTBna31WvdG6qJ0wC07E0SgSxQ7CmzV+rB361Ufi21gjvJqcYPa0nobXaoZHdNNf+au7KVcIGc+HZ6FRCSdtrpEsmVwhBwBYTmwSzv2Gz6ydkrdb04dUGcczvV7O14qYnZ0uQ4CkwrzzbJe5fatDtdbzRHwqtdt/UbYHeO2ETO1bLWytF7s9m2r843fEuQbwN5oFNhxzV4n4Ymf+0qj0G4t0xgQchmPlhUdf+nREuC3r596Cw58kESRB7QBDLMoWJMInnCOadMOd4o36f4Z4GYV3rChEAYCFWpxve5lJzAWZHTVGEYr6cYnYP5lTlMdF70B4RTqCdQdlqU8RrTbEKRSwPFrW4I5OWpiO9DWJvhXfGBEkw+wbGbXn6UAI96KxV1tRlM1GfK5Psr7ZqneHDf1aKimx1b8Q+D3uX8Gjn7ipxiKHOKZcP14M2GU4E83WxE5DOvlIMLJb9+mza3VwndqxxTU5PkGpcnoOxU/v0t9/XFRSlmS4BOaY3p0r0l+wSpRnSha+36YF0+KpDvQh4FIQDwfyS9Bouun7Rh0401d4zirHry/iaCAw/WLjnJAD01tl6JaGprjahdV/ODTVK3pg+N0jlje9fy8SddXYxXr5HNK+X+aBuq1Nn/P2uSmFfp2ZwxHfLveW8wY7ZgWtavkauB0wxE6D10LDw7rnI0hVNAWh70C9KlEZGandLnW7O+cMBZbx8JRc3cu0hAoYtu0V5lswJ5/fZo8cwJMRMLtp4tRg7Exv4wXabFp7xv9MQtXxdPBqIiQBN4S3PucGtdJLj/+qfuX6WXnJkrUMBrxEA2rGxTnnmytd7weiZSlFbwJRxeF+IBbim5/bKCgBY4iaAYl6mlKigPy4CZlPfFkkAy9J7wJClSfDV8plvs56A+egxt5ZDWGn8BCDnCqUlrtC/vMxHobXWvMCRxcT13CoFvGu1zAsuszOiHM5HoUKoSfS7uAkgma5lSkucH1sijIuE/ClPSBV4UOdPsgKUIPZxQr+l0SgtcbI9IVXgh09Vyo4V8Ufmb/nLpkSEIt6ttMQnY6sE8ZLgLagR3o3JBw96pSVUAf4yJSpEa4kPRG+Jk6HJBq5pZyCBFjhcoH2ETVrdtU8dAdBaqy9suaZEhWotMdT0p4wA6B3iboHDBX6c1P2m9oQVQGkAfZucsz7XXqfn/QMrXQDAQwCnNUnaDc/0XBubF3gQbaNUuWqq1CAAp8ADfJucujhbyGMpIYBGCYeFOmYQgFPgAbUFTJdpF/KYkQSxUQZFQiFghq84ESuC/6E/6cYniXoDvgqJ6ZMfgnnhAjA4JRr105hwAbZgcm+DXYwetj0T2hvUPsHhN2InIPgsEVAVOwHkGQ4B+AJmTgLM5sBSlQTFExZdEjTEEEMMMcQQQ0yLRf4DxLoaMntjeCAAAAAASUVORK5CYII="/>
-            </NavLink>
+                    <img
+                        className={`${css.logo} ${css.account}`}
+                        alt={'Logo'}
+                        src="data:image/png;base64,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"/>
+                </NavLink>
             </div>
 
             <NavLink to={'/movies'}>Movies</NavLink>
             <NavLink to={'/genre'}>Genre</NavLink>
             <NavLink to={'/serche'}>Serche</NavLink>
+            {/*<button className={css.toggleButton}>'Dark' : 'Light' </button>*/}
+            <ThemeSwicher/>
             <img
                 className={css.account}
                 alt={'account'}

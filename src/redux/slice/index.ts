@@ -1,3 +1,4 @@
 export * from './movieSlice'
 export * from './genreSlice'
-export * from './sercheSlice'
+export * from './searchSlice'
+export * from './themeSlice'

@@ -1,88 +1,52 @@
 import {useAppDispatch, useAppSelector} from "../../hooks";
 import {useSearchParams} from "react-router-dom";
 import {ChangeEvent, useEffect} from "react";
-import {sercheService} from "../../services";
-import {sercheActions} from "../../redux";
-import {Serche} from "./Serche";
-import {poster} from "../../constans";
-
+import {useForm} from "react-hook-form";
+import {searchActions} from "../../redux";
+import {Movie, MoviesList} from "../MoviesContainer";
+import {PaginationsOnlySearch} from "../PaginationsContainer";
+import css from './Serches.module.css'
 const Serches = () => {
-    // const { movieResults } = useAppSelector(state => state.movies);
-    // const dispatch = useAppDispatch();
-    // const [queryParams, setQueryParams] = useSearchParams({ query: '', page: '1' });
-    // const queryValue = queryParams.get('query') || '';
-    // const pageCurrent = queryParams.get('page');
-    //
-    // useEffect(() => {
-    //     dispatch(sercheActions.getSerche({ query: queryValue, page: pageCurrent }));
-    // }, [queryValue, pageCurrent, dispatch]);
-    //
-    // const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
-    //     const { value } = event.target;
-    //     setQueryParams({ query: value, page: '1' });
-    // };
-    //
-    // const handleShowAll = () => {
-    //     dispatch(sercheActions.getSerche({ query: queryValue, page: pageCurrent }));
-    //     dispatch(sercheActions.setFormActive(true));
-    // };
-    //
-    // return (
-    //     <div>
-    //         <form>
-    //             <input
-    //                 type="text"
-    //                 value={queryValue}
-    //                 onChange={handleInputChange}
-    //                 placeholder="Search movies..."
-    //             />
-    //             <button type="button" onClick={handleShowAll}>Show All</button>
-    //         </form>
-    //         <div>
-    //             {movieResults?.map((movie) => (
-    //                 <Serche key={movie.id} movie={movie} poster={poster} />
-    //             ))}
-    //         </div>
-    //     </div>
-    // );
-};
+    const {searchWord} = useAppSelector(state => state.search)
+    const dispatch = useAppDispatch();
+    const [query, setQuery] = useSearchParams({query: '', page: '1'});
+    const currentPage = query.get('page') ? query.get('page') : '1'
+    const {reset, handleSubmit} = useForm()
+    const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
+        setQuery({query: event.target.value, page: '1'});
+    };
 
-//     const { movieResults, movies } = useAppSelector(state => state.movies);
-//     // const { query, page, isFormActive } = useAppSelector(state => state.serche);
-//     const dispatch = useAppDispatch();
-//     const [queryParams] = useSearchParams({ query: '', page: '1' });
-//     const queryValue = queryParams.get('query') || '';
-//     const pageCurrent = queryParams.get('page');
-//     useEffect(() => {
-//         dispatch(sercheActions.getSerche({ query: queryValue, page: pageCurrent }));
-//     }, [queryValue, pageCurrent, dispatch]);
-//     const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
-//         dispatch(sercheActions.setQuery(event.target.value));
-//     };
-//
-//     const handleShowAll = () => {
-//         dispatch(sercheActions.getSerche({  query: queryValue, page: pageCurrent }));
-//         dispatch(sercheActions.setFormActive(true));
-//     };
-//
-//     return (
-//         <div>
-//             <form>
-//                 <input
-//                     type="text"
-//                     value={queryValue}
-//                     onChange={handleInputChange}
-//                     placeholder="Search movies..."
-//                 />
-//                 <button onClick={handleShowAll}>Show All</button>
-//             </form>
-//             <div>
-//                 {movieResults?.map((movie) => (
-//                     <Serche key={movie.id} movie={movie} poster={poster} />
-//                 ))}
-//             </div>
-//         </div>
-//     );
-// };
+    useEffect(() => {
+        dispatch(searchActions.getSearch({query: query.get('query'), page: currentPage}));
+    }, [currentPage]);
+
+
+    const search = async () => {
+        dispatch(searchActions.getSearch({query: query.get('query'), page: currentPage}))
+        reset()
+    }
+return (
+    <div>
+        <div className={css.formAndButton}>
+            <form>
+                <input
+                    type="text"
+                    onChange={handleInputChange}
+                    placeholder="Search movies..."
+                />
+
+            </form>
+            <button className={css.ButtontoForm} onClick={handleSubmit(search)}>Show All</button>
+        </div>
+
+        <div className={css.Serche}>
+            {searchWord && searchWord.map(movie => <Movie key={movie?.id} movie={movie}/>)}
+    </div>
+    <div>
+        {searchWord && searchWord.length > 0 && <PaginationsOnlySearch/>}
+    </div>
+    </div>
+);
+};
 
 export {Serches};

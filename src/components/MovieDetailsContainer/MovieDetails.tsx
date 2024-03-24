@@ -4,11 +4,13 @@ import {IMovieDetails} from "../../interface";
 import {useNavigate} from "react-router-dom";
 import {poster} from "../../constans";
 import {Badge, Rating} from "@mui/material";
+import css from './MovieDetails.module.css'
 
 interface IProps {
     movieDetails:IMovieDetails
 }
 const MovieDetails:FC<IProps>= ({movieDetails}) => {
+    const {theme}=useAppSelector(state => state.theme)
     const navigate = useNavigate();
     const {
         original_language,
@@ -24,29 +26,31 @@ const MovieDetails:FC<IProps>= ({movieDetails}) => {
 
 
     return (
-        <div>
+        <div className={`${css.Detauls}  `}>
             <button onClick={() => navigate(-1)}>Back</button>
-            <div>
-                {poster_path?(
-                    <img src={posterurl} alt={original_title}/>
-                ): (
-                    <img src={`https://th.bing.com/th?id=OIF.s1S%2fxuarov%2fLtVlIpIFzaQ&rs=1&pid=ImgDetMain`} alt='none'/>
-                )}
-                <div>
-                    <div>Original title: {original_title}</div>
+            <div className={css.lider}>
+                <div className={css.imgMovie}>
+                    <h2 className={`${css.titleLider} ${theme? css.light :css.dark}`}>{title}</h2>
+
+                    {poster_path?(
+                        <img className={css.imgDetails}  src={posterurl} alt={title}/>
+                    ): (
+                        <img className={css.imgDetails}  src={`https://th.bing.com/th?id=OIF.s1S%2fxuarov%2fLtVlIpIFzaQ&rs=1&pid=ImgDetMain`} alt='none'/>
+                    )}
+                </div>
+
+                <div className={ `${css.informationMovie} `}>
+                    <div className={theme? css.light :css.dark}>Original title: {original_title}</div>
                     <div>Original language: {original_language}</div>
                     <div>Release date: {release_date}</div>
                     <div>Popularity: {popularity}</div>
                     <div>Vote average:</div>
-                    <Rating name="customized-10" defaultValue={vote_average} precision={0.5}
-                            max={10.0}
-                            readOnly/>
-                    <div>Overview:</div>
-                    <div> {overview}</div>
+                    <Rating className={css.rating} name="customized-10" defaultValue={vote_average} precision={0.5} max={10.0} readOnly />
+                    <div>Overview:</div><div> {overview}</div>
                     <br/>
 
                     Genres:
-                    <div>
+                    <div className={css.mainGenre}>
                         {genres.map((genre) => (
                             <Badge key={genre.id} badgeContent={genre.id} color="secondary">
                                 <button onClick={() => navigate(`/genre/moviesgenres/${genre.id}`)}>
@@ -55,12 +59,12 @@ const MovieDetails:FC<IProps>= ({movieDetails}) => {
                             </Badge>
                         ))}
                     </div>
+
                 </div>
 
             </div>
 
-        </div>
-    );
+        </div>);
 };
 
 export {MovieDetails};

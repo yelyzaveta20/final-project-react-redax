@@ -2,3 +2,11 @@
     display: flex;
     justify-content: space-around;
 }
+.dark{
+    background: #aad6f1;
+    color: #020246;
+}
+.light{
+    background: #3b3535;
+    color: #aad6f1;
+}

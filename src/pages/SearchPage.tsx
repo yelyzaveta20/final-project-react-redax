@@ -1,6 +1,6 @@
 import {Serches} from "../components/SerchesContainer";
 
-const SerchePage = () => {
+const SearchPage = () => {
     return (
         <div>
             <Serches/>
@@ -8,4 +8,4 @@ const SerchePage = () => {
     );
 };
 
-export {SerchePage};
+export {SearchPage};

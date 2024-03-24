@@ -1,0 +1,79 @@
+.Detauls{
+    width: 80vw;
+    display: block;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.titleLider{
+    width: 80vw;
+}
+.imgDetails{
+    width: 20vw;
+    height: 60vh;
+    box-shadow: 5px -9px 70px 24px rgba(2, 2, 70, 0.57);
+    border-radius: 30px;
+}
+.light{
+    color: #020246;
+}
+.dark{
+ color: #aad6f1;
+}
+.informationMovie{
+    display: block;
+    justify-content: center;
+    align-items: center;
+    width: 55vw;
+    color: #020246;
+    font-size: 22px;
+    font-family: "Jacquarda Bastarda 9", serif;
+    background: rgba(170, 192, 119, 0.34);
+    padding: 10px;
+    box-shadow: 5px -9px 70px 24px rgba(87,226,137,0.64);
+    border-radius: 30px;
+}
+.imgMovie{
+    width: 25vw;
+
+}
+.buttonGenre{
+    height: 5vh;
+    width: 9vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+}
+.mainGenre{
+    display: flex;
+    justify-content:space-around;
+}
+.lider{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+h2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #020246;
+}
+button{
+    background: rgb(3,7,243);
+    background: linear-gradient(14deg, rgba(3,7,243,0.5013655120251226) 0%, rgba(4,255,84,0.49576327112876406) 51%);
+}
+.movieDetailsLight button{
+    background: rgb(238,174,202);
+    background: radial-gradient(circle, rgba(238,174,202,0.5041666324733018) 0%, rgba(148,187,233,0.5013655120251226) 100%);
+    color: #e1fc0b;
+}
+.movieDetailsLight .informationMovie{
+    color: #79c050;
+}
+.movieDetailsLight h2{
+    color: #aad6f1;
+
+}
