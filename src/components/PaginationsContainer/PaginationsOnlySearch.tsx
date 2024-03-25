@@ -1,10 +1,11 @@
 import {useSearchParams} from "react-router-dom";
 import css from './Paginations.module.css'
+import {useAppSelector} from "../../hooks";
 const PaginationsOnlySearch = () => {
     const [query, setQuery] = useSearchParams({ query: '', page: '1' });
     const queryValue = query.get('query') || '';
     const pageCurrent = query.get('page');
-
+    const {theme}=useAppSelector(state => state.theme)
     const next = () => {
         const nextPage = +pageCurrent + 1;
         setQuery({ query: queryValue, page: nextPage.toString() });
@@ -18,9 +19,9 @@ const PaginationsOnlySearch = () => {
     }
     return (
         <div className={css.paginationContainer}>
-            <button disabled={!pageCurrent || +pageCurrent === 1} onClick={prev}>prev</button>
+            <button className={theme? css.light :css.dark} disabled={!pageCurrent || +pageCurrent === 1} onClick={prev}>prev</button>
 
-            <button disabled={!pageCurrent || pageCurrent.length === 0} onClick={next}>next</button>
+            <button className={theme? css.light :css.dark} disabled={!pageCurrent || pageCurrent.length === 0} onClick={next}>next</button>
         </div>
     );
 };

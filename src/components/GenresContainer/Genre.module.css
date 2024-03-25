@@ -12,8 +12,17 @@
 .div a{
     border: 1px black solid;
     padding:1.5px 3px 1.5px 3px;
-    border-radius: 10px;background: rgba(175, 197, 122, 0.25);
-    color: #020246;
+    border-radius: 10px;
+    /*background: rgba(175, 197, 122, 0.25);*/
+
+}
+.light{
+    background: rgba(175, 197, 122, 0.25);
+    border-radius: 10px;
+}
+.dark{
+    background: rgb(212, 212, 238);
+    border-radius: 10px;
 }
 .div a[class='active'] {
     color: #4d4de7;

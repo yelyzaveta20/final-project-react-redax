@@ -67,3 +67,11 @@ input{
 /*.sercheLight h3{*/
 /*    color: #aad6f1;*/
 /*}*/
+.dark{
+    background: #aad6f1;
+    color: #020246;
+}
+.light{
+    background: #3b3535;
+    color: #aad6f1;
+}

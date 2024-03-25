@@ -27,7 +27,8 @@ const MovieDetails:FC<IProps>= ({movieDetails}) => {
 
     return (
         <div className={`${css.Detauls}  `}>
-            <button onClick={() => navigate(-1)}>Back</button>
+            <button className={theme? css.light :css.dark}
+                onClick={() => navigate(-1)}>Back</button>
             <div className={css.lider}>
                 <div className={css.imgMovie}>
                     <h2 className={`${css.titleLider} ${theme? css.light :css.dark}`}>{title}</h2>
@@ -39,21 +40,23 @@ const MovieDetails:FC<IProps>= ({movieDetails}) => {
                     )}
                 </div>
 
-                <div className={ `${css.informationMovie} `}>
+                <div className={ `${css.informationMovie}`}>
                     <div className={theme? css.light :css.dark}>Original title: {original_title}</div>
-                    <div>Original language: {original_language}</div>
-                    <div>Release date: {release_date}</div>
-                    <div>Popularity: {popularity}</div>
-                    <div>Vote average:</div>
+                    <div className={theme? css.light :css.dark}>Original language: {original_language}</div>
+                    <div className={theme? css.light :css.dark}>Release date: {release_date}</div>
+                    <div className={theme? css.light :css.dark}>Popularity: {popularity}</div>
+                    <div className={theme? css.light :css.dark}>Vote average:</div>
                     <Rating className={css.rating} name="customized-10" defaultValue={vote_average} precision={0.5} max={10.0} readOnly />
-                    <div>Overview:</div><div> {overview}</div>
+                    <div className={theme? css.light :css.dark}>Overview:</div>
+                    <div className={theme? css.light :css.dark}> {overview}</div>
                     <br/>
 
-                    Genres:
-                    <div className={css.mainGenre}>
+                    <div className={theme? css.light :css.dark}>Genres:</div>
+                    <div className={`${css.mainGenre} ${theme? css.light :css.dark}`}>
                         {genres.map((genre) => (
                             <Badge key={genre.id} badgeContent={genre.id} color="secondary">
-                                <button onClick={() => navigate(`/genre/moviesgenres/${genre.id}`)}>
+                                <button className={theme? css.light :css.dark}
+                                    onClick={() => navigate(`/genre/moviesgenres/${genre.id}`)}>
                                     {genre.name}
                                 </button>
                             </Badge>

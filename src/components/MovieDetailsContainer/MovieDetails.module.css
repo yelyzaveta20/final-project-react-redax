@@ -16,6 +16,14 @@
 .light{
     color: #020246;
 }
+button.light{
+    background: #3b3535;
+    color: #aad6f1;
+}
+button.dark{
+    background: #aad6f1;
+    color: #020246;
+}
 .dark{
  color: #aad6f1;
 }

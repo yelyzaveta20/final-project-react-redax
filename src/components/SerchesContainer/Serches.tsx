@@ -8,6 +8,7 @@ import {PaginationsOnlySearch} from "../PaginationsContainer";
 import css from './Serches.module.css'
 const Serches = () => {
     const {searchWord} = useAppSelector(state => state.search)
+    const {theme}=useAppSelector(state => state.theme)
     const dispatch = useAppDispatch();
     const [query, setQuery] = useSearchParams({query: '', page: '1'});
     const currentPage = query.get('page') ? query.get('page') : '1'
@@ -29,18 +30,19 @@ return (
     <div>
         <div className={css.formAndButton}>
             <form>
-                <input
+                <input className={theme? css.light :css.dark}
                     type="text"
                     onChange={handleInputChange}
                     placeholder="Search movies..."
                 />
 
             </form>
-            <button className={css.ButtontoForm} onClick={handleSubmit(search)}>Show All</button>
+            <button className={`${css.ButtontoForm} ${theme? css.light :css.dark}`} onClick={handleSubmit(search)}>Show All</button>
         </div>
 
         <div className={css.Serche}>
             {searchWord && searchWord.map(movie => <Movie key={movie?.id} movie={movie}/>)}
+            {/*{searchWord? searchWord.map(movie => <Movie key={movie?.id} movie={movie}/>):<MoviesList/>}*/}
     </div>
     <div>
         {searchWord && searchWord.length > 0 && <PaginationsOnlySearch/>}
