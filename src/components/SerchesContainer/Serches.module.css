@@ -4,31 +4,6 @@
     flex-wrap: wrap;
     justify-content: center;
 }
-/*.posters {*/
-/*    display: flex;*/
-/*    justify-content: center;*/
-/*    flex-direction: column;*/
-/*    width: 16vw;*/
-/*    height: 55vh;*/
-/*    cursor: pointer;*/
-/*}*/
-/*.h2Div{*/
-/*    height: 10vh;*/
-/*    overflow: hidden;*/
-/*    text-overflow: ellipsis;*/
-/*}*/
-/*.posters h3 {*/
-/*    white-space: nowrap;*/
-/*    overflow: hidden;*/
-/*    text-overflow: ellipsis;*/
-/*    margin-bottom: 8px;*/
-/*    height: 5vh;*/
-/*    width: 13vw;*/
-/*    font-size: 22px;*/
-/*}*/
-/*.rating{*/
-/*    margin-left: -10px;*/
-/*}*/
 .formAndButton{
     display: flex;
     justify-content: center;
@@ -40,7 +15,6 @@
 }
 
 input{
-
     margin-top: 10px;
     width: 15vw;
     height: 4vh;
@@ -51,22 +25,7 @@ input{
     font-size: 17px;
     border: 1px #011001 solid;
 }
-/*.sercheLight input{*/
-/*    background: rgba(255, 255, 255, 0.66);*/
-/*}*/
 
-/*button{*/
-/*    background: rgb(3,7,243);*/
-/*    background: linear-gradient(14deg, rgba(3,7,243,0.5013655120251226) 0%, rgba(4,255,84,0.49576327112876406) 51%);*/
-/*}*/
-/*.sercheLight button{*/
-/*    background: rgb(238,174,202);*/
-/*    background: radial-gradient(circle, rgba(238,174,202,0.5041666324733018) 0%, rgba(148,187,233,0.5013655120251226) 100%);*/
-/*    color: #e1fc0b;*/
-/*}*/
-/*.sercheLight h3{*/
-/*    color: #aad6f1;*/
-/*}*/
 .dark{
     background: #aad6f1;
     color: #020246;

@@ -1,11 +1,12 @@
-import {useAppDispatch, useAppSelector} from "../../hooks";
 import {useLocation, useSearchParams} from "react-router-dom";
 import {useEffect} from "react";
-import {movieActions} from "../../redux";
 
+import {useAppDispatch, useAppSelector} from "../../hooks";
+import {movieActions} from "../../redux";
 import {Paginations} from "../PaginationsContainer";
-import css from './MoviesGenres.module.css'
 import {Movie} from "../MoviesContainer";
+import css from './MoviesGenres.module.css'
+
 const GenresOfMoviesList = () => {
     const { movies } = useAppSelector(state => state.movies);
     const dispatch = useAppDispatch();

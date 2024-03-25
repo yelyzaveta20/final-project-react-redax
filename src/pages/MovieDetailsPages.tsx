@@ -1,4 +1,5 @@
-import {MovieDetails, MoviesDetailsWithId} from "../components/MovieDetailsContainer";
+import {MoviesDetailsWithId} from "../components";
+
 
 const MovieDetailsPages = () => {
     return (

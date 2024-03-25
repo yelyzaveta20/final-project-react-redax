@@ -1,6 +1,7 @@
-import {createAsyncThunk, createSlice, isFulfilled} from "@reduxjs/toolkit";
-import {IMovie, IMovies, ISerche, ISerches} from "../../interface";
+import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 import {AxiosError} from "axios";
+
+import {IMovie, IMovies} from "../../interface";
 import {sercheService} from "../../services";
 
 interface IState {

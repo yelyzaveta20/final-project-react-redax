@@ -1,4 +1,4 @@
-import {Serches} from "../components/SerchesContainer";
+import {Serches} from "../components";
 
 const SearchPage = () => {
     return (

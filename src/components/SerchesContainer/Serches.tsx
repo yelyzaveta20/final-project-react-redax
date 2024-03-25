@@ -1,11 +1,13 @@
-import {useAppDispatch, useAppSelector} from "../../hooks";
 import {useSearchParams} from "react-router-dom";
 import {ChangeEvent, useEffect} from "react";
 import {useForm} from "react-hook-form";
+
+import {useAppDispatch, useAppSelector} from "../../hooks";
 import {searchActions} from "../../redux";
-import {Movie, MoviesList} from "../MoviesContainer";
+import {Movie} from "../MoviesContainer";
 import {PaginationsOnlySearch} from "../PaginationsContainer";
 import css from './Serches.module.css'
+
 const Serches = () => {
     const {searchWord} = useAppSelector(state => state.search)
     const {theme}=useAppSelector(state => state.theme)
@@ -42,7 +44,6 @@ return (
 
         <div className={css.Serche}>
             {searchWord && searchWord.map(movie => <Movie key={movie?.id} movie={movie}/>)}
-            {/*{searchWord? searchWord.map(movie => <Movie key={movie?.id} movie={movie}/>):<MoviesList/>}*/}
     </div>
     <div>
         {searchWord && searchWord.length > 0 && <PaginationsOnlySearch/>}

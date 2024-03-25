@@ -1,10 +1,11 @@
-import {IMovie} from "../../interface";
 import {FC} from "react";
-import {poster} from "../../constans";
-import css from './Movies.module.css'
-import {Rating} from "@mui/material";
 import {useNavigate} from "react-router-dom";
+import {Rating} from "@mui/material";
+
+import {IMovie} from "../../interface";
+import {poster} from "../../constans";
 import {useAppSelector} from "../../hooks";
+import css from './Movies.module.css'
 interface IProps{
     movie:IMovie
 }
@@ -26,7 +27,7 @@ const Movie:FC<IProps> = ({movie}) => {
 
             <h3 className={theme? css.light :css.dark}>{original_title}</h3>
 
-            <Rating className={css.rating} name="customized-10" defaultValue={vote_average} precision={0.5} max={10.0} readOnly/>
+            <Rating className={css.rating} name="customized-10" defaultValue={vote_average} precision={0.5} max={10.0}  readOnly/>
 
         </div>
     );

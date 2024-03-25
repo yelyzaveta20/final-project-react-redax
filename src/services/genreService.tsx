@@ -1,5 +1,5 @@
 import {IRes} from "../types";
-import {IGenre, IGenres} from "../interface";
+import {IGenres} from "../interface";
 import {apiService} from "./apiService";
 import {urls} from "../constans";
 

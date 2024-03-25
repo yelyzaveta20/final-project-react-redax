@@ -1,6 +1,8 @@
 import {useSearchParams} from "react-router-dom";
-import css from './Paginations.module.css'
+
 import {useAppSelector} from "../../hooks";
+import css from './Paginations.module.css'
+
 const PaginationsOnlySearch = () => {
     const [query, setQuery] = useSearchParams({ query: '', page: '1' });
     const queryValue = query.get('query') || '';

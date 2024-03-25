@@ -1,11 +1,13 @@
 .Detauls{
-    width: 80vw;
+    width: 100vw;
     display: block;
-    flex-wrap: wrap;
-    align-items: center;
+    justify-content: center;
+    /*flex-wrap: wrap;*/
+    /*align-items: center;*/
 }
 .titleLider{
-    width: 80vw;
+    width: 100vw;
+    text-align: center;
 }
 .imgDetails{
     width: 20vw;
@@ -26,6 +28,15 @@ button.dark{
 }
 .dark{
  color: #aad6f1;
+}
+.buttonGenre{
+    height: 5vh;
+    width: 9vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
 }
 .informationMovie{
     display: block;
@@ -69,19 +80,19 @@ h2{
     align-items: center;
     color: #020246;
 }
-button{
-    background: rgb(3,7,243);
-    background: linear-gradient(14deg, rgba(3,7,243,0.5013655120251226) 0%, rgba(4,255,84,0.49576327112876406) 51%);
-}
-.movieDetailsLight button{
-    background: rgb(238,174,202);
-    background: radial-gradient(circle, rgba(238,174,202,0.5041666324733018) 0%, rgba(148,187,233,0.5013655120251226) 100%);
-    color: #e1fc0b;
-}
-.movieDetailsLight .informationMovie{
-    color: #79c050;
-}
-.movieDetailsLight h2{
-    color: #aad6f1;
+/*button{*/
+/*    background: rgb(3,7,243);*/
+/*    background: linear-gradient(14deg, rgba(3,7,243,0.5013655120251226) 0%, rgba(4,255,84,0.49576327112876406) 51%);*/
+/*}*/
+/*.movieDetailsLight button{*/
+/*    background: rgb(238,174,202);*/
+/*    background: radial-gradient(circle, rgba(238,174,202,0.5041666324733018) 0%, rgba(148,187,233,0.5013655120251226) 100%);*/
+/*    color: #e1fc0b;*/
+/*}*/
+/*.movieDetailsLight .informationMovie{*/
+/*    color: #79c050;*/
+/*}*/
+/*.movieDetailsLight h2{*/
+/*    color: #aad6f1;*/
 
-}
+/*}*/

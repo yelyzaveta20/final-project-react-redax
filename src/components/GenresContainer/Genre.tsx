@@ -1,8 +1,10 @@
-import {FC, PropsWithChildren} from "react";
-import {IGenre} from "../../interface";
+import {FC} from "react";
 import {NavLink} from "react-router-dom";
-import css from './Genre.module.css'
+
+import {IGenre} from "../../interface";
 import {useAppSelector} from "../../hooks";
+import css from './Genre.module.css'
+
 interface IProps{
     genre:IGenre
 }
