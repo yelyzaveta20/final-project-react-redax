@@ -10,8 +10,7 @@ interface IState {
     page:string | null,
     movieDetails:IMovieDetails,
     id:number
-    // moviesGenres:IMovie[],
-    // movieResults:IMovie[]
+
 }
 interface MovieOfGenresPayload {
     id: number;
@@ -23,8 +22,7 @@ const initialState:IState={
     page:null,
     movieDetails:null,
     id:null
-    // moviesGenres:[],
-    // movieResults:[]
+
 
 };
 const getAllMovies = createAsyncThunk<IMovies, string | null>(
@@ -74,19 +72,9 @@ const movieSlice= createSlice({
     extraReducers:builder =>
         builder
 
-            // .addCase(getAllMovies.fulfilled, (state, action)=>{
-            //     // state.movies=action.payload.results
-            //     const {page, results} = action.payload;
-            //     state.page=page
-            //     state.movies = results
-            // })
             .addCase(getDetails.fulfilled, (state, action) => {
                 state.movieDetails=action.payload
             })
-            // .addCase(getMovieOfGenres.fulfilled, (state, action) => { // <-- only one argument provided
-            //     state.moviesGenres = action.payload.results;
-            //
-            // })
             .addMatcher(isFulfilled(getAllMovies, getMovieOfGenres), (state, action) => {
                 const {page, results} = action.payload;
 
