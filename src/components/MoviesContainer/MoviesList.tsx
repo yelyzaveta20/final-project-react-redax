@@ -23,7 +23,7 @@ const MoviesList = () => {
                 }
 
             </div>
-            {movies && <div >
+            {movies && <div>
                 <Paginations/>
             </div>}
         </div>

@@ -2,10 +2,12 @@ import {NavLink} from "react-router-dom";
 
 import css from './Header.module.css'
 import {ThemeSwicher} from "../Swicher";
+import {useAppSelector} from "../../hooks";
 
 const Header = () => {
+    const {theme}=useAppSelector(state => state.theme)
     return (
-        <div className={css.Header}>
+        <div className={`${css.Header} ${theme? css.light :css.dark}`}>
             <div>
                 <NavLink className={css.textWihtLogo} to={'/movies'}>KING MOVIES
 

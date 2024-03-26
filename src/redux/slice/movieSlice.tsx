@@ -9,9 +9,9 @@ interface IState {
     movies:IMovie[]|null,
     page:string | null,
     movieDetails:IMovieDetails,
-    id:number,
-    moviesGenres:IMovie[],
-    movieResults:IMovie[]
+    id:number
+    // moviesGenres:IMovie[],
+    // movieResults:IMovie[]
 }
 interface MovieOfGenresPayload {
     id: number;
@@ -19,12 +19,12 @@ interface MovieOfGenresPayload {
 }
 
 const initialState:IState={
-    movies:null,
+    movies:[],
     page:null,
     movieDetails:null,
-    id:null,
-    moviesGenres:[],
-    movieResults:[]
+    id:null
+    // moviesGenres:[],
+    // movieResults:[]
 
 };
 const getAllMovies = createAsyncThunk<IMovies, string | null>(
