@@ -22,7 +22,7 @@ const MovieDetails:FC<IProps>= ({movieDetails}) => {
         overview,poster_path,
         genres
     } = movieDetails;
-    const posterurl=`${poster}${poster_path}`
+    const posterurl = poster_path ? `${poster}${poster_path}` : 'https://via.placeholder.com/300?text=None+Poster';
 
 
     return (
@@ -32,14 +32,8 @@ const MovieDetails:FC<IProps>= ({movieDetails}) => {
             <div className={css.lider}>
                 <div className={css.imgMovie}>
 
-
-                    {poster_path ? (
                         <img className={css.imgDetails} src={posterurl} alt={title}/>
-                    ) : (
-                        <img className={css.imgDetails}
-                             src={`https://th.bing.com/th?id=OIF.s1S%2fxuarov%2fLtVlIpIFzaQ&rs=1&pid=ImgDetMain`}
-                             alt='none'/>
-                    )}
+
                 </div>
 
                 <div className={`${css.informationMovie}`}>
